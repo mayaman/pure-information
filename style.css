@@ -1,0 +1,163 @@
+
+/* border: 5px solid red; */
+/* marquee {
+    font-family: 'Parisienne', cursive;
+    color: black;
+} */
+
+.phone-number {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-family: 'Parisienne', cursive;
+    z-index: 1;
+    font-size: 55px;
+}
+
+.fade {
+    background: linear-gradient(#FFFFFFFF, #FFFFFF);
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    height: 200px;
+    position: fixed;
+    top: 50%;
+    left: 0px;
+    transform: translate(0, -50%);
+    mix-blend-mode: multiply;
+    z-index: 1;
+    font-family: 'Parisienne', cursive;
+    color: black;
+    text-align: center;
+    font-size: 200px;
+}
+
+body {
+    display: grid;
+    width: calc(100vw - 0px);
+    height: calc(100vh - 0px);
+    background-color: white;
+    color: black;
+    font-size: 28px;
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+    /* background-image: url('./screenshot.png'); */
+    /* background-color: #fddaef; */
+}
+
+#message-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.current-message {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    margin: 5vh 5vh;
+    text-shadow: 0 0 0.5vw #000000;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+}
+
+.flex-item {
+    text-align: center;
+    display: inline;
+}
+
+.center {
+    /* font-weight: bold; */
+    opacity: 1;
+    animation: fadeIn 5s infinite;
+    -webkit-animation: fadeIn 5s infinite;
+    -moz-animation: fadeIn 5s infinite;
+    -o-animation: fadeIn 5s infinite;
+    -ms-animation: fadeIn 5s infinite;
+}
+
+.left {
+    width: 100%;
+    text-align: right;
+
+}
+
+.right {
+    width: 100%;
+    text-align: left;
+
+
+}
+
+.left, .right {
+    /* font-size: 18px; */
+}
+
+.message {
+    position: absolute;
+    transform: translate(0, -50%);
+    transition-timing-function: ease-in-out;
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+    padding: 10px;
+    background: white;
+    border-radius: 50px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+fieldset {
+    border: 10px solid transparent;
+    border-top-color: black;
+    box-sizing: border-box;
+    grid-area: 1 / 1;
+    padding: 20px;
+    width: inherit;
+}
+
+fieldset:nth-of-type(1) {
+    background: content-box center/contain no-repeat url("photo-1588852065463-5de1411ea697?w=400");
+}
+
+fieldset:nth-of-type(2) {
+    transform: rotate(90deg);
+}
+
+fieldset:nth-of-type(3) {
+    transform: rotate(180deg);
+}
+
+fieldset:nth-of-type(4) {
+    transform: rotate(-90deg);
+}
+
+legend {
+    font: 15pt/0 'Averia Serif Libre';
+    margin: auto;
+    padding: 0 4px;
+}
+
+fieldset:nth-of-type(3)>legend {
+    transform: rotate(180deg);
+}
