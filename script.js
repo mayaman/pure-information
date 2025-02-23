@@ -27,13 +27,7 @@ setTimeout(() => {
 
 const altMayas = ["@maya", "maya!", "maya.", "maya\n"];
 
-
-function ready() {
-    // const divDiv = document.createElement("div");
-    // divDiv.innerHTML = '⭑';
-    // divDiv.classList.add("current-message");
-    // document.getElementById("message-container").appendChild(divDiv);
-
+function createNewMessage() {
     currentMessage = messages[Math.floor(Math.random() * messages.length)].split(" ");
     // TODO: for loop to find the one string that contains "maya" of any kind and use that as the index ref
     // let mayaIndex = currentMessage.indexOf("maya");
@@ -51,41 +45,33 @@ function ready() {
     let postMaya = currentMessage.slice(mayaIndex + 1, currentMessage.length);
     const newDiv = document.createElement("div");
     newDiv.classList.add("current-message");
+
+    if (preMaya.length > postMaya.length) {
+        // Left is longer
+        newDiv.style.alignItems = "flex-end";
+    } else {
+        newDiv.style.alignItems = "flex-start";
+    }
+
+    // LEFT
     const leftSpan = document.createElement("span");
     leftSpan.classList.add("flex-item");
     leftSpan.classList.add("left");
-    if (preMaya.length <= 0) {
-        leftSpan.innerText = sparkle + " ";
-    } else {
-        leftSpan.innerText = sparkle + " " + preMaya.join(" ");
-    }
-
-    // if (randomNumber() < 5) {
-    //     leftSpan.style.fontFamily = "'Parisienne', cursive";
-    // }
+    leftSpan.innerText = preMaya.join(" ");
     newDiv.appendChild(leftSpan);
 
+    // CENTER
     const centerSpan = document.createElement("span");
     centerSpan.classList.add("flex-item");
     centerSpan.classList.add("center");
     centerSpan.innerText = originalMaya;
-    // centerSpan.style.fontSize = (12 + Math.random() * 100) + 'px';
-    // centerSpan.style.fontSize = 26 + 'px';
-    // if (randomNumber() < 5) {
-    //     centerSpan.style.fontFamily = "'Parisienne', cursive";
-    // }
-    // centerSpan.style.fontFamily = "'Great Vibes', cursive";
-    // centerSpan.style.fontSize = '24px';
-
     newDiv.appendChild(centerSpan);
 
+    // RIGHT
     const rightSpan = document.createElement("span");
     rightSpan.classList.add("flex-item");
     rightSpan.classList.add("right");
-    rightSpan.innerText = postMaya.join(" ") + " " + sparkle;
-    // if (randomNumber() < 5) {
-    //     rightSpan.style.fontFamily = "'Parisienne', cursive";
-    // }
+    rightSpan.innerText = postMaya.join(" ");
     newDiv.appendChild(rightSpan);
 
     // and give it some content
@@ -99,9 +85,17 @@ function ready() {
     // newDiv.style.fontSize = 26 + 'px';
 
     document.getElementById("message-container").appendChild(newDiv); //☆
+
+}
+
+
+function ready() {
+    createNewMessage();
+
     myInterval = Math.random() * 2222;
     setTimeout(ready, myInterval);
 }
+
 
 
 
@@ -122,7 +116,7 @@ let myInterval = 11; // 200
 document.addEventListener("keypress", (e) => {
     // update();
     if (e.key == 'm' || e.key == 'a' || e.key == 'y') {
-        ready();
+        createNewMessage();
     }
 });
 

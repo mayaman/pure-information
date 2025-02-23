@@ -1,49 +1,11 @@
-
-/* border: 5px solid red; */
-/* marquee {
-    font-family: 'Parisienne', cursive;
-    color: black;
-} */
-
-.phone-number {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    font-family: 'Parisienne', cursive;
-    z-index: 1;
-    font-size: 55px;
-}
-
-.fade {
-    background: linear-gradient(#FFFFFFFF, #FFFFFF);
-    width: 100vw;
-    margin: 0px;
-    padding: 0px;
-    height: 200px;
-    position: fixed;
-    top: 50%;
-    left: 0px;
-    transform: translate(0, -50%);
-    mix-blend-mode: multiply;
-    z-index: 1;
-    font-family: 'Parisienne', cursive;
-    color: black;
-    text-align: center;
-    font-size: 200px;
-}
-
 body {
     display: grid;
     width: calc(100vw - 0px);
     height: calc(100vh - 0px);
-    background-color: white;
-    color: black;
-    font-size: 28px;
-    text-align: left;
+    background-color: cornsilk;
     margin: 0px;
     padding: 0px;
-    /* background-image: url('./screenshot.png'); */
-    /* background-color: #fddaef; */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #message-container {
@@ -58,12 +20,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2em;
-    margin: 5vh 5vh;
-    text-shadow: 0 0 0.5vw #000000;
+    gap: 1em;
+    margin: 5vw 5vw;
+    text-shadow: 0 0 0.25vw black;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 2vw;
+    width: 60vw;
+
+    /* text-shadow: 0 0 0.25vw #fddaef;
+    color: #fddaef; */
+
+    text-shadow: 0 0 0.25vw rgb(161, 161, 208);
+    color: rgb(161, 161, 208);
 }
 
 .flex-item {
@@ -72,7 +40,6 @@ body {
 }
 
 .center {
-    /* font-weight: bold; */
     opacity: 1;
     animation: fadeIn 5s infinite;
     -webkit-animation: fadeIn 5s infinite;
