@@ -1,20 +1,12 @@
-console.log("hello world baby");
-let chars = ["♡", "!", "ꔫ", "♩", "♬", "•", "༶", "・", "゜", "・", ".", "*", "✿", "✼", ":*ﾟ", "☆", "𐐪𐑂", "o", "✧"];
-let fonts = ["Arial", "Times New Roman", "Verdana", "cursive"];
+console.log("maya");
 let messages;
 let allMessages = "";
 let currentMessage;
 let currentMessageIndex = 0;
-let scrollPosition = 0;
 let wipe = false;
-const sparkle = '';
+let myInterval = 11; // 200
 
-// $.getJSON("test.json", function (json) {
-//     console.log(json); // this will show the info it in firebug console
-//     myJSON = json;
-// });
-
-fetch('./texts.json')
+fetch('./assets/texts.json')
     .then((response) => response.json())
     .then((json) => {
         messages = json;
@@ -26,7 +18,6 @@ setTimeout(() => {
     ready();
 }, 1111);
 
-const altMayas = ["@maya", "maya!", "maya.", "maya\n"];
 
 function createNewMessage() {
     currentMessage = messages[Math.floor(Math.random() * messages.length)].split(" ");
@@ -89,36 +80,17 @@ function createNewMessage() {
 
 }
 
-
 function ready() {
     createNewMessage();
-
     myInterval = Math.random() * 2222;
     setTimeout(ready, myInterval);
 }
 
-
-
-
-
-
-
-let myInterval = 11; // 200
-
-// setInterval(() => {
-//     // let newMessage = messages[Math.floor(Math.random() * messages.length)].toLowerCase().replace("maya", "𝓂𝒶𝓎𝒶");
-//     // addElement();
-
-//     update();
-
-// }, myInterval);
-
-
 document.addEventListener("keypress", (e) => {
-    // update();
-    if (e.key == 'm' || e.key == 'a' || e.key == 'y') {
-        createNewMessage();
-    }
+    // if (e.key == 'm' || e.key == 'a' || e.key == 'y') {
+    //     createNewMessage();
+    // }
+    createNewMessage();
 });
 
 
@@ -164,9 +136,4 @@ function update() {
         wipe = true;
     }
 
-}
-
-
-function randomNumber() {
-    return Math.random() * 100;
 }
