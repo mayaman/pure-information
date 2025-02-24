@@ -18,6 +18,7 @@ fetch('./texts.json')
     .then((response) => response.json())
     .then((json) => {
         messages = json;
+        console.log("number of messages: ", messages.length);
         currentMessage = messages[Math.floor(Math.random() * messages.length)].toLowerCase().split(" "); // .split(" ")
     });
 
@@ -46,7 +47,7 @@ function createNewMessage() {
     const newDiv = document.createElement("div");
     newDiv.classList.add("current-message");
 
-    if (preMaya.length > postMaya.length) {
+    if (mayaIndex > (currentMessage.length - (mayaIndex + 1))) {
         // Left is longer
         newDiv.style.alignItems = "flex-end";
     } else {
