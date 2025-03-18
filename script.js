@@ -91,7 +91,7 @@ function createNewMessage() {
 function ready() {
     createNewMessage();
     myInterval = Math.random() * 2222;
-    // setTimeout(ready, myInterval);
+    setTimeout(ready, myInterval);
 }
 
 document.addEventListener("keypress", (e) => {
