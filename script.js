@@ -1,4 +1,4 @@
-console.log("maya");
+console.log("★.｡.:*☆:**:. ⓦ𝕖𝓑s𝕚𝓉𝐄 Ｂʸ MAYA 𝐌𝕒𝓝 .:**:.☆*.:｡.★ ♡ www.mayaontheinter.net ♡ 萬美亞");
 let messages;
 let allMessages = "";
 let currentMessage;
@@ -10,13 +10,14 @@ fetch('./assets/texts.json')
     .then((response) => response.json())
     .then((json) => {
         messages = json;
-        console.log("number of messages: ", messages.length);
+        console.log("this work features", messages.length, "text messages");
         currentMessage = messages[Math.floor(Math.random() * messages.length)].toLowerCase().split(" "); // .split(" ")
+        ready();
     });
 
-setTimeout(() => {
-    ready();
-}, 1111);
+// setTimeout(() => {
+
+// }, 11);
 
 
 function createNewMessage() {
@@ -38,7 +39,12 @@ function createNewMessage() {
     const newDiv = document.createElement("div");
     newDiv.classList.add("current-message");
 
-    if (mayaIndex > (currentMessage.length - (mayaIndex + 1))) {
+    console.log("message: ", currentMessage.join(" "));
+
+    console.log("character difference: ", Math.abs(preMaya.join(" ").length - postMaya.join(" ").length));
+    
+    // if (mayaIndex > (currentMessage.length - (mayaIndex + 1))) {
+    if (preMaya.join(" ").length > postMaya.join(" ").length) {
         // Left is longer
         newDiv.style.alignItems = "flex-end";
     } else {
@@ -58,6 +64,8 @@ function createNewMessage() {
     centerSpan.classList.add("center");
     centerSpan.innerText = originalMaya;
     newDiv.appendChild(centerSpan);
+    const randomDuration = Math.floor(Math.random() * 9) + 2; 
+    centerSpan.style.animation = `fadeIn ${randomDuration}s infinite`;
 
     // RIGHT
     const rightSpan = document.createElement("span");
@@ -83,7 +91,7 @@ function createNewMessage() {
 function ready() {
     createNewMessage();
     myInterval = Math.random() * 2222;
-    setTimeout(ready, myInterval);
+    // setTimeout(ready, myInterval);
 }
 
 document.addEventListener("keypress", (e) => {

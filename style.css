@@ -21,15 +21,11 @@ body {
     align-items: center;
     justify-content: center;
     gap: 1em;
-    margin: 5vw 5vw;
+    margin: 2vw 5vw;
     text-shadow: 0 0 0.25vw black;
     color: white;
     font-size: 2vw;
     width: 60vw;
-
-    /* text-shadow: 0 0 0.25vw #fddaef;
-    color: #fddaef; */
-
     text-shadow: 0 0 0.25vw rgb(161, 161, 208);
     color: rgb(161, 161, 208);
 }
@@ -61,11 +57,11 @@ body {
 
 }
 
-.left, .right {
-    /* font-size: 18px; */
-}
+/* .left, .right {
+    font-size: 18px;
+} */
 
-.message {
+/* .message {
     position: absolute;
     transform: translate(0, -50%);
     transition-timing-function: ease-in-out;
@@ -77,7 +73,7 @@ body {
     padding: 10px;
     background: white;
     border-radius: 50px;
-}
+} */
 
 @keyframes fadeIn {
     0% {
