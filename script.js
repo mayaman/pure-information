@@ -1,3 +1,11 @@
+/**
+ * Pure Information (2025)
+ * Maya Man
+ * Custom generative software (color, silent)
+ * 
+ * mayaontheinter.net
+ */
+
 console.log("★.｡.:*☆:**:. ⓦ𝕖𝓑s𝕚𝓉𝐄 Ｂʸ MAYA 𝐌𝕒𝓝 .:**:.☆*.:｡.★ ♡ www.mayaontheinter.net ♡ 萬美亞");
 console.log("The meaning of MAYA is the supernatural power wielded by gods and demons to produce illusions. Broadly: illusion.");
 console.log("⋆.ೃ࿔.𖥔 ݁ ˖*:･༄");
